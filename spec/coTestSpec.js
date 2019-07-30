@@ -1,8 +1,7 @@
 const expect = require('chai').expect;
 
-const coTest = require('../src/coTest');
-const CarInsurance = coTest.CarInsurance;
-const Product = coTest.Product;
+const CarInsurance = require('../src/coTest').CarInsurance;
+const Product = require('../src/model/product').Product;
 
 describe("CO Test for the producto Medium Coverage", function() {
   let coTestProduct = new CarInsurance([ new Product("Medium Coverage", 10, 20) ]);
@@ -184,11 +183,57 @@ describe("CO Test for the producto Special Full Coverage / For the values entere
     expect(products[0].price).equal(25);
   });
 
-  it("should return: sellIn=9 / price=27 for the day 5 ", function() {
+  it("should return: sellIn=9 / price=27 for the day 6 ", function() {
     const products = coTestProduct.updatePrice();
     expect(products[0].name).equal("Special Full Coverage");
     expect(products[0].sellIn).equal(9);
     expect(products[0].price).equal(27);
+  });
+
+
+
+
+
+  it("should return: sellIn=8 / price=29 for the day 7 ", function() {
+    const products = coTestProduct.updatePrice();
+    expect(products[0].name).equal("Special Full Coverage");
+    expect(products[0].sellIn).equal(8);
+    expect(products[0].price).equal(29);
+  });
+
+  it("should return: sellIn=7 / price=31 for the day 8 ", function() {
+    const products = coTestProduct.updatePrice();
+    expect(products[0].name).equal("Special Full Coverage");
+    expect(products[0].sellIn).equal(7);
+    expect(products[0].price).equal(31);
+  });
+
+  it("should return: sellIn=6 / price=33 for the day 9 ", function() {
+    const products = coTestProduct.updatePrice();
+    expect(products[0].name).equal("Special Full Coverage");
+    expect(products[0].sellIn).equal(6);
+    expect(products[0].price).equal(33);
+  });
+
+  it("should return: sellIn=5 / price=35 for the day 10 ", function() {
+    const products = coTestProduct.updatePrice();
+    expect(products[0].name).equal("Special Full Coverage");
+    expect(products[0].sellIn).equal(5);
+    expect(products[0].price).equal(35);
+  });
+
+  it("should return: sellIn=4 / price=37 for the day 11 ", function() {
+    const products = coTestProduct.updatePrice();
+    expect(products[0].name).equal("Special Full Coverage");
+    expect(products[0].sellIn).equal(4);
+    expect(products[0].price).equal(38);
+  });
+
+  it("should return: sellIn=3 / price=40 for the day 12 ", function() {
+    const products = coTestProduct.updatePrice();
+    expect(products[0].name).equal("Special Full Coverage");
+    expect(products[0].sellIn).equal(3);
+    expect(products[0].price).equal(41);
   });
 });
 

@@ -3,7 +3,7 @@
 ### En archivo src/model/configProduct.js se encuentra una función que tiene la configuración de cada producto, según su comportamiento.
 
 Para agregar un nuevo producto se debe agregar al arreglo "configProduct" el siguiente JSON:
-
+```js
 {
   name: 'Special Full Coverage', // OBLIGATORIO: Nombre del producto
   sellIn: {
@@ -21,7 +21,7 @@ Para agregar un nuevo producto se debe agregar al arreglo "configProduct" el sig
   }
 }
 
-
+```
 # ComparaOnline Test Requirements Specification
 
 Hi, welcome to the Software Engineer CO Test. In this test we expect to see your approach to refactor a legacy code into a testeable, object oriented solution.

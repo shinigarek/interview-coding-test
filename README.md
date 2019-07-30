@@ -1,3 +1,27 @@
+# Configuración de productos: 
+
+### En archivo src/model/configProduct.js se encuentra una función que tiene la configuración de cada producto, según su comportamiento.
+
+Para agregar un nuevo producto se debe agregar al arreglo "configProduct" el siguiente JSON:
+
+{
+  name: 'Special Full Coverage', // OBLIGATORIO: Nombre del producto
+  sellIn: {
+      value: -1, // OBLIGATORIO: Disminuye el sellIn por día (si quieres que aumente lo dejas en positivo. Ej: 1)
+  },
+  price: {
+      value: 1, // OBLIGATORIO: Aumenta o disminuye el precio por día (1= Aumenta / 2= Disminuye)
+      rulerSellIn: 1, // En caso que el sellIn pase a negativo, puedes sumar o restar un valor adicional al precio. Si no quieres que sume o reste, debes poner 0
+      rulerDay: { // OBLIGATORIO: si no tienes reglas de días como es el caso del producto Special Full Coverage, lo puedes dejar en null (rulerDay: null)
+          limit: 2, // Este parametro restringe hasta cuantas veces por día puedes aumentar o disminuir el precio de un producto (Ej: El producto Special Full Coverage, aumento 2 veces su precio cada 5 días)
+          day: 5 // Indica la cantidad de días, en que quieres que aumente tu valor.
+      },
+      limit: 50, // OBLIGATORIO: Todos los productos a excepcion del legendario, deben llegar su precio como máximo a 50. Si quieres que sea más, puedes aumentar esta valor
+      priceDrops: true // OBLIGATORIO:  Si el precio de tu producto pasa a 0, cuando el sellIn es negativo, entonces lo debes activar como true. De lo contrario lo debes dejar en false
+  }
+}
+
+
 # ComparaOnline Test Requirements Specification
 
 Hi, welcome to the Software Engineer CO Test. In this test we expect to see your approach to refactor a legacy code into a testeable, object oriented solution.
